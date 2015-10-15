@@ -11,7 +11,7 @@ def on_read(client, data, error):
         return
     # client.write(data)
     # print(data)
-    client.write(b'HTTP/1.1 200 OK\r\n\r\nHello, world!')
+    client.write(b'HTTP/1.0 200 OK\r\n\r\nHello, world!')
     client.close()
     clients.remove(client)
 
