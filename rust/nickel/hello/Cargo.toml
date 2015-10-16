@@ -1,0 +1,15 @@
+[package]
+name = "hello"
+version = "0.1.0"
+authors = ["zhangkaizhao <zhangkaizhao@gmail.com>"]
+
+[dependencies.nickel]
+version = "*"
+# If you are using the 'nightly' rust channel you can uncomment
+# the line below to activate unstable features
+# features = ["unstable"]
+
+# Some examples require the `rustc_serialize` crate, which will
+# require uncommenting the lines below
+# [dependencies]
+# rustc-serialize = "*"
