@@ -69,6 +69,10 @@ cabal.sandbox.config
 *.hp
 .stack-work/
 
+### Nim
+
+nimcache/
+
 ### Node.js
 
 # Logs
