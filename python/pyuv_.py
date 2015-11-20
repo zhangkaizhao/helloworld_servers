@@ -3,6 +3,8 @@ from __future__ import print_function
 import signal
 import pyuv
 
+from constants import SIMPLE_HTTP_RESPONSE
+
 
 def on_read(client, data, error):
     if data is None:
@@ -11,7 +13,7 @@ def on_read(client, data, error):
         return
     # client.write(data)
     # print(data)
-    client.write(b'HTTP/1.0 200 OK\r\n\r\nHello, world!')
+    client.write(SIMPLE_HTTP_RESPONSE)
     client.close()
     clients.remove(client)
 
@@ -37,6 +39,7 @@ clients = []
 server = pyuv.TCP(loop)
 server.bind(("0.0.0.0", 8000))
 server.listen(on_connection)
+print("listen on 0.0.0.0:8000")
 
 signal_h = pyuv.Signal(loop)
 signal_h.start(signal_cb, signal.SIGINT)

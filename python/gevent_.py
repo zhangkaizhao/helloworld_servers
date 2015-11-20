@@ -1,5 +1,7 @@
 from gevent.server import StreamServer
 
+from constants import SIMPLE_HTTP_RESPONSE
+
 
 class EchoServer(StreamServer):
 
@@ -9,7 +11,7 @@ class EchoServer(StreamServer):
             line = rfile.readline()
             if not line.strip():
                 break
-        socket.sendall(b'HTTP/1.0 200 OK\r\n\r\nHello, world!')
+        socket.sendall(SIMPLE_HTTP_RESPONSE)
         rfile.close()
 
 
